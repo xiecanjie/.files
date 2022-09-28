@@ -8,8 +8,11 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-PATH="$HOME/.local/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+PATH="$HOME/.local/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then

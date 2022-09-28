@@ -132,4 +132,4 @@ stty -ixon
 
 alias l="ls -l"
 
-. $(brew --prefix)/etc/bash_completion
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
