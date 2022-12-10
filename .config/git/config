@@ -1,6 +1,6 @@
 [user]
-	name = dev
-	email = dev@xyz.com
+	name = heisenbug
+	email = heisenbug@xyz.com
 [alias]
 	lg = log --graph
 	co = checkout
