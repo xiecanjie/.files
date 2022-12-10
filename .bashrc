@@ -66,7 +66,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\w\a\]$PS1"
     ;;
 *)
     ;;
@@ -125,10 +125,12 @@ export HISTFILESIZE=32767
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+ulimit -n 4096
+
 stty -ixon
 
-if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
-    . /usr/share/doc/fzf/examples/key-bindings.bash
-fi
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias l="ls -l --hide={node_modules,package.json,package-lock.json,tsconfig.json}"
+
+. $(brew --prefix)/etc/bash_completion
