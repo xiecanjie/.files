@@ -1,5 +1,5 @@
 if test -z "$TMUX"
-    set PATH $HOME/.local/bin $PATH
+    set PATH $HOME/go/bin $HOME/.local/bin $PATH
 end
 
 set SHELL (which fish)
