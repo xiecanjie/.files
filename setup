@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -ex
+
+sudo apt install -y exa
+sudo apt install -y fzf
+sudo apt install -y ripgrep
+
+mkdir -p .local/share/nvim/site/pack/packer/start/packer.nvim
+git clone https://github.com/wbthomason/packer.nvim.git .local/share/nvim/site/pack/packer/start/packer.nvim
+
+mkdir -p .local/share/nvim/site/pack/packer/start/material.nvim
+git clone https://github.com/marko-cerovac/material.nvim.git .local/share/nvim/site/pack/packer/start/material.nvim
+
+[ -s ../.bashrc.bak  ] || mv ../.bashrc  ../.bashrc.bak
+[ -s ../.profile.bak ] || mv ../.profile ../.profile.bak
+stow .
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install --lts
+
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+sudo apt install -y fish
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | argv=--noninteractive fish --no-config
