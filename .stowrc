@@ -1,0 +1,3 @@
+--ignore=setup
+--ignore=.gitmodules
+--ignore=.stowrc
