@@ -132,3 +132,7 @@ if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
 fi
 
 alias l="ls -l --hide={node_modules,package.json,package-lock.json,tsconfig.json}"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
