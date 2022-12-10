@@ -1,5 +1,8 @@
 if test -z "$TMUX"
     set PATH $HOME/.local/bin $PATH
+
+    set    PATH /usr/local/opt/coreutils/libexec/gnubin    $PATH
+    set MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
 end
 
 set SHELL (which fish)
