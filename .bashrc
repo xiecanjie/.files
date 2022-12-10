@@ -131,4 +131,4 @@ if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
     . /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
-alias l="ls -l"
+alias l="ls -l --hide={node_modules,package.json,package-lock.json,tsconfig.json}"
