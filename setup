@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -ex
+
+sudo apt install -y podman
+sudo apt install -y stow
+sudo apt install -y btop
+sudo apt install -y eza
+sudo apt install -y fzf
+sudo apt install -y ripgrep
+sudo apt install -y neovim
+
+mkdir -p ~/.config
+mkdir -p ~/.local/bin
+mkdir -p ~/.local/share
+
+[ -s ~/.bashrc.bak  ] || mv ~/.bashrc  ~/.bashrc.bak
+[ -s ~/.profile.bak ] || mv ~/.profile ~/.profile.bak
+
+stow .
+
+git clone --filter=blob:none --branch=stable https://github.com/folke/lazy.nvim.git ~/.local/share/nvim/lazy/lazy.nvim
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+. ~/.nvm/nvm.sh
+
+sudo apt install -y fish
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | argv=--noninteractive fish --no-config
+
+nvim --headless "+Lazy! sync" +qa
+nvm install --lts
