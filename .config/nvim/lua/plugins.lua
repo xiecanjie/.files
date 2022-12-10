@@ -119,12 +119,12 @@ require("lazy").setup({
       end,
     },
 
-    -- {
-    --   "nvim-treesitter/nvim-treesitter", version = false,
-    --   event = { "VeryLazy" },
-    --   opts = { highlight = { enable = true } },
-    --   main = "nvim-treesitter.configs",
-    -- },
+    {
+      "nvim-treesitter/nvim-treesitter", version = false,
+      event = { "VeryLazy" },
+      opts = { highlight = { enable = true } },
+      main = "nvim-treesitter.configs",
+    },
 
     {
       "hrsh7th/nvim-cmp",
