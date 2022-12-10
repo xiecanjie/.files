@@ -1,3 +1,3 @@
 function l --description 'eza'
-    eza $argv
+    eza --ignore-glob "node_modules|package.json|package-lock.json|tsconfig.json" $argv
 end
