@@ -28,3 +28,5 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+export JAVA_HOME=$(/usr/libexec/java_home -v1.8)
