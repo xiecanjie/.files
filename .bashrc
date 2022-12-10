@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[00;35m\]\$\[\033[00m\] '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[00;34m\]\$\[\033[00m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -66,7 +66,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\w\a\]$PS1"
     ;;
 *)
     ;;
@@ -125,10 +125,12 @@ export HISTFILESIZE=32767
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+ulimit -n 4096
+
 stty -ixon
 
-if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
-    . /usr/share/doc/fzf/examples/key-bindings.bash
-fi
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias l="ls -l"
+
+. $(brew --prefix)/etc/bash_completion
