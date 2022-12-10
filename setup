@@ -2,9 +2,9 @@
 
 set -ex
 
-sudo apt install -y exa
-sudo apt install -y fzf
-sudo apt install -y ripgrep
+brew install exa
+brew install fzf
+brew install ripgrep
 
 mkdir -p .local/share/nvim/site/pack/packer/start/packer.nvim
 git clone https://github.com/wbthomason/packer.nvim.git .local/share/nvim/site/pack/packer/start/packer.nvim
@@ -22,5 +22,5 @@ nvm install --lts
 
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
-sudo apt install -y fish
+brew install fish
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | argv=--noninteractive fish --no-config
