@@ -1,0 +1,36 @@
+[user]
+	name = dev
+	email = dev@xyz.com
+[alias]
+	lg = log --graph
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	dt = difftool
+	di = diff
+[core]
+	editor = nvim
+	quotepath = off
+[init]
+	defaultBranch = master
+[push]
+	default = simple
+[pull]
+	rebase = true
+[diff]
+	tool = nvimdiff
+[difftool]
+	prompt = false
+[merge]
+	tool = nvimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[rebase]
+	autosquash = true
+	autostash = true
+[rerere]
+	enabled = true
+[sendpack]
+	sideband = false
