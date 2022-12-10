@@ -131,6 +131,6 @@ stty -ixon
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-alias l="ls -l"
+alias l="ls -l --hide={node_modules,package.json,package-lock.json,tsconfig.json}"
 
 . $(brew --prefix)/etc/bash_completion
