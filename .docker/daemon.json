@@ -1,0 +1,15 @@
+{
+  "builder": {
+    "gc": {
+      "defaultKeepStorage": "20GB",
+      "enabled": true
+    }
+  },
+  "experimental": false,
+  "features": {
+    "buildkit": false
+  },
+  "insecure-registries": [
+    "host.docker.internal:5000"
+  ]
+}
