@@ -16,4 +16,8 @@ if status is-interactive
     set VISUAL nvim
 
     bind \cw backward-kill-bigword
+
+    # if test -z "$TMUX"
+    #     osascript -e 'tell application "System Events"' -e 'set position of first window of application process "kitty" to {232, 67}' -e 'end tell'
+    # end
 end
