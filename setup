@@ -2,13 +2,12 @@
 
 set -ex
 
-sudo apt install -y podman
+sudo apt install -y podman-remote
 sudo apt install -y stow
 sudo apt install -y btop
 sudo apt install -y eza
 sudo apt install -y fzf
 sudo apt install -y ripgrep
-sudo apt install -y neovim
 
 mkdir -p ~/.config
 mkdir -p ~/.local/bin
@@ -26,3 +25,5 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 
 nvim --headless "+Lazy! sync" +qa
 nvm install --lts
+
+podman system connection add host unix:///run/user/1000/podman/podman.sock

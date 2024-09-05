@@ -1,3 +1,3 @@
 function fish_prompt
-    echo -n -s (set_color 0087ff) "⋊> " (set_color normal)
+    echo -n -s (set_color yellow) "⋊> " (set_color normal)
 end
