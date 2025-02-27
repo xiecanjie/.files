@@ -1,0 +1,5 @@
+[Behavior]
+# Show preedit in application
+PreeditEnabledByDefault=False
+# Show Input Method Information when switch input method
+ShowInputMethodInformation=False
